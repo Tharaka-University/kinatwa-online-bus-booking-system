@@ -44,3 +44,116 @@
 	</ul>
 	<body/>
 	<html/>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bus seat selection</title>
+        <link rel="sylesheet"href="style.css">
+        <head/>
+        <body>
+            <h2>Bus seat selection</h2>
+            <"form id="bookingform>
+            <div class ="seat-container>
+            <div id="seat1" class="seat"onclick="revealMoreSeats()">1</div>
+            <div id="seat2"class ="seat"onclick="toggleSeat('seat2')">2</div>
+            <div id="seat3"class ="seat"onclick="toggleseat('seat3')">3</div>
+            <div id="seat4"class="seat"onclick="toggleSeat('seat4')">4</div>
+            <div id ="seat"class ="seat"onclick="toggleSeat('seat5')">5</div>
+            <div id="seat"class ="seat"onclick="toggleSeat('seat6')">6</div>
+            <div id ="seat"class ="seat"onclick="toggleSeat('seat7')">7</div>
+            <div id ="seat"class ="seat"onclick ="toggleSeat('seat8')">8</div>
+            <div id ="seat"class ="seat"onclick="toggleSeat('saet9')">9</div>
+            <div id="seat"class ="seat"onclick="toggleSeat('seat10')">10</div>
+            <div id ="seat"class ="seat"onclick="toggleSeat('seat11')">11</div>
+            <div id="seat"class ="seat"onclick="toggleSeat('seat12')">12</div>
+            <div id ="seat" class ="seat"onclick ="toggleSeat('seat13')">13</div>
+            <div id ="seat"class ="seat"onclick="toggleSeat('seat14')">14</div>
+         </div>
+         <h3>User Information</h3>
+    <input type="text"id="username"placeholder="Enter your name"required>
+    <input type="text"id="email"placeholder="Enter your email"required>
+    <h3>Select Date and Time</h3>
+    <input type="date"id="journeydate" required>
+    <input type="time"id="journeytime"required>
+    <h4>Payment</h4>
+    <select id="PaymentMethod"required>
+        <option value ="disabled selected >Select Payment Method</option>
+        <option value ="cash"></option>
+        <option value="send Money"></option>
+    </select>
+    <button onclick="submitForm()">submit</button>
+    <form/>
+    <script src="script .js"></script>
+ </body>
+ </html>
+
+;[]=let selectedSeats
+}()function revealMoreSeats
+;const moreSeats=document.getElementById('moreSeats')
+}if (moreSeats.style.display==='none')
+    moreSeats.style.display='grid';
+    {
+ }
+}function toggleSeat(seatId)
+;const seat=document.getElementById(seatId)
+}if (seat.classList.contains('selected'))
+    ;seat.classList.remove('selected')
+    ;selectedSeats=selectedSeats.filter(id =>!==seatId)
+}else {
+;seat.classList.add('selected')
+;selectedSeats.push(seatsId){
+   {
+}() function submitForm
+;const username=document.getElementById('username').Value
+;const email=document.getElementById('email').Value
+;const date=document.getElementById('journeyDate').Value
+;const time=document.getElementById('journeyTime').Value
+;const payment=document.getElementById('paymentMethod').Value
+if (!username|| ! email || !date|| !time || !payment ||
+}selectedSeats.length===0)
+;alert ('please fill all the fields and select one seat.')
+;return
+}
+alert ('Booking confirmed!\nName: ${username}')\nEmail: ${email}\nSeats:$
+{selectedSets.join(',')}\nDate:${date}\nTime: ${time}\nPayment: ${payment}
+;')
+{
+}body
+;font-family:Arial,sans-serif
+;margin:20px{
+}seat.
+;width:50px
+;height"50px
+;background-color:light grey
+;margin:50px
+;border-radius:50px
+;display:inline- block
+;cursor:pointer
+;text-align:center
+;line-height:50px
+;font-weight:bold
+{
+    }selected.
+    ;background-color:green
+    {
+
+}seat-container.
+;margin-button:20px
+{
+}inverted- v- container.
+;display:grid
+;grid-template-columns:repeat(7,1 fr)
+;grid-gap:10px
+;justify-items:center
+{
+    }inverted -v- container>:nth-child(-n+6).
+    ;grid-row:1
+    {
+ } inverted -v- container>:nth-child(n+7).
+ ;grid-row2
+ {
+     }input ,select,button
+     ;margin:10px 0
+     ;padding:8px
+     ;width:100%
+     {
