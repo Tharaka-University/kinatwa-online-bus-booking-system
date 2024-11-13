@@ -1,0 +1,85 @@
+body{
+	background-color: #015958;
+	background-size: 1400px,900px;
+
+
+}
+
+.container{
+	display:flex;
+}
+
+.container2{
+display: flex;
+margin-top: 100PX;
+}
+
+.about_us{
+	width: 45%;
+}
+
+.picha img{
+	width: 65%;
+
+}
+
+
+.right{
+	border-left: 2px solid #B3B3B3;
+	margin-right: 50px;
+}
+
+.left img{
+	border-radius: 15px;
+	width: 500px;
+	padding-right: 10px;
+}
+
+img{
+	margin-top: px;
+	margin-left: 30px;
+	margin-right: 30px;
+	
+}
+
+h1{
+	color: #262626;
+	font-size: 150px;
+	margin-left: 100px;
+
+
+}
+
+section{
+	color: #B3B3B3;
+	font-size: 30px;
+	text-align: center;
+	padding-left: 40px;
+	margin-top: 100px;
+	width:700px;
+}
+
+button{
+	background-color: #008F8C;
+	width: 200px;
+	height: 200px;
+	border: none;
+	border-radius: 15px;
+	margin-top: 100px;
+	font-size: 20px;
+}
+
+a.hover{
+	background-color: #0CABA8;
+}
+routes{
+	width:20px;
+	text-align:center;
+	padding-left:40px;
+	margin-top: 100px ;
+	font-size:10px;
+
+
+
+
+

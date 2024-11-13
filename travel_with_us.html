@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel with Us - Kinatwa Sacco</title>
+    <link rel="stylesheet" type="text/css" href="travel.css">
+</head>
+<body>
+    <h1>Kinatwa Sacco</h1>
+    
+    <div id="seat-selection">
+        <h2>Select Your Seat</h2>
+        <p>Select the seats below:</p>
+        <form id="bookingForm" method="post" action="submit_booking.php">
+            <!-- Seat Options -->
+            <div id="seat-options">
+                <label><input type="radio" name="seat" value="1"> Seat 1</label><br>
+                 <label><input type="radio" name="seat" value="2"> Seat 2</label><br>
+                 <label><input type="radio" name="seat" value="3"> Seat 3</label><br>
+                 <label><input type="radio" name="seat" value="4"> Seat 4</label><br>
+                 <label><input type="radio" name="seat" value="5"> Seat 5</label><br>
+                 <label><input type="radio" name="seat" value="6"> Seat 6</label><br>
+                 <label><input type="radio" name="seat" value="7"> Seat 7</label><br>
+                 <label><input type="radio" name="seat" value="8"> Seat 8</label><br>
+                 <label><input type="radio" name="seat" value="9"> Seat 9</label><br>
+                 <label><input type="radio" name="seat" value="10"> Seat 10</label><br>
+                 <label><input type="radio" name="seat" value="11"> Seat 11</label><br>
+                 <label><input type="radio" name="seat" value="12"> Seat 12</label><br>
+                 <label><input type="radio" name="seat" value="13"> Seat 13</label><br>
+
+                <!-- Repeat for other seats... -->
+                <label><input type="radio" name="seat" value="14"> Seat 14</label><br>
+            </div>
+
+            <!-- Routes and Date Selection -->
+            <h2>Available Routes</h2>
+            
+            <!-- Route and Date Selection Combined -->
+            <div class="route">
+                <label for="route">Choose Route and Time</label>
+                <select name="route" id="route" required>
+                    <option value="">--Select Route--</option>
+                    <option value="1-morning">Nairobi to Makueni (Morning)</option>
+                    <option value="1-evening">Nairobi to Makueni (Evening)</option>
+                    <option value="2-morning">Nairobi to Kitui (Morning)</option>
+                    <option value="2-evening">Nairobi to Kitui (Evening)</option>
+                    <option value="3-morning">Nairobi to Machakos (Morning)</option>
+                    <option value="3-evening">Nairobi to Machakos (Evening)</option>
+                    <option value="4-morning">Nairobi to Kitui via Machakos (Morning)</option>
+                    <option value="4-evening">Nairobi to Kitui via Machakos (Evening)</option>
+                </select>
+            </div>
+            
+            <!-- Date Selection -->
+            <div class="date-selection">
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button" onclick="submitBooking()">Submit Booking</button>
+        </form>
+        
+        <!-- Confirmation Message -->
+        <div id="confirmation" class="hidden confirmation">Booking Successful! ✔️</div>
+    </div>
+
+    <script>
+        let bookedSeats = []; 
+
+        // Update seat availability
+        function updateSeatAvailability() {
+            const seats = document.querySelectorAll('#seat-options input[type="radio"]');
+            seats.forEach(seat => {
+                seat.disabled = bookedSeats.includes(seat.value);
+            });
+        }
+
+        // Submit booking
+        function submitBooking() {
+            const selectedSeat = document.querySelector('input[name="seat"]:checked');
+            const selectedRoute = document.getElementById('route').value;
+            const selectedDate = document.getElementById('date').value;
+
+            if (selectedSeat && selectedRoute && selectedDate) {
+                document.getElementById('confirmation').style.display = 'block';
+                document.getElementById('bookingForm').submit(); 
+            } else {
+                alert("Please complete all selections.");
+            }
+        }
+    </script>
+</body>
+</html>
